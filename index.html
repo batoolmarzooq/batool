@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Art Portfolio</title>
+  <style>
+    :root {
+      --color1: #fde1c7;
+      --color2: #fca4aa;
+      --color3: #d75c7b;
+      --color4: #a33b63;
+      --color5: #47021a;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--color1);
+      color: var(--color5);
+    }
+
+    header {
+      background-color: var(--color3);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background-color: var(--color2);
+      padding: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--color5);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .language-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: var(--color4);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="language-toggle" onclick="toggleLanguage()">العربية</button>
+    <h1 data-en="My Art Portfolio" data-ar="معرض لوحاتي">My Art Portfolio</h1>
+  </header>
+
+  <nav>
+    <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+    <a href="#art" data-en="Art Work" data-ar="الأعمال الفنية">Art Work</a>
+    <a href="#cv" data-en="CV" data-ar="السيرة الذاتية">CV</a>
+    <a href="#about" data-en="About Me" data-ar="عنّي">About Me</a>
+    <a href="#contact" data-en="Contact" data-ar="اتصل بي">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h2 data-en="Welcome to my art world!" data-ar="مرحبًا بكم في عالمي الفني!">Welcome to my art world!</h2>
+  </section>
+
+  <section id="art">
+    <h2 data-en="Art Work" data-ar="الأعمال الفنية">Art Work</h2>
+    <iframe src="https://drive.google.com/embeddedfolderview?id=1qX0i2HX5xQ0rQKcMAgUgbcVNBD0Dsujm#grid" allowfullscreen></iframe>
+  </section>
+
+  <section id="cv">
+    <h2 data-en="CV" data-ar="السيرة الذاتية">CV</h2>
+    <iframe src="https://drive.google.com/file/d/1OU9IrrEyK2zH7hKp39p8WvOG0c3mZx5b/preview" allow="autoplay"></iframe>
+  </section>
+
+  <section id="about">
+    <h2 data-en="About Me" data-ar="عنّي">About Me</h2>
+    <iframe src="https://drive.google.com/file/d/1PCvI2ejU6C7SLbGJRGilmuLITRw5fsRt/preview" allow="autoplay"></iframe>
+  </section>
+
+  <section id="contact">
+    <h2 data-en="Contact" data-ar="اتصل بي">Contact</h2>
+    <iframe src="https://drive.google.com/file/d/1n8XHwTuxcN5xA5s44aCcrZSuOqehJrE2/preview" allow="autoplay"></iframe>
+  </section>
+
+  <script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+      document.querySelector('.language-toggle').textContent = currentLang === 'en' ? 'العربية' : 'English';
+      document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+    }
+  </script>
+</body>
+</html>
