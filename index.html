@@ -1,103 +1,119 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Batool Marzooq | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Art Portfolio</title>
   <style>
+    :root {
+      --color1: #fde1c7;
+      --color2: #fca4aa;
+      --color3: #d75c7b;
+      --color4: #a33b63;
+      --color5: #47021a;
+    }
+
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #f6f1ea;
-      color: #3e2d24;
-      line-height: 1.8;
+      font-family: Arial, sans-serif;
+      background-color: var(--color1);
+      color: var(--color5);
     }
+
     header {
-      background-color: #b56a4c;
+      background-color: var(--color3);
       color: white;
+      padding: 1rem;
       text-align: center;
-      padding: 2rem 1rem;
+      position: relative;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background-color: var(--color2);
+      padding: 0.5rem;
+      flex-wrap: wrap;
     }
+
+    nav a {
+      color: var(--color5);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .language-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: var(--color4);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+
     section {
       padding: 2rem;
-      max-width: 800px;
-      margin: auto;
     }
-    .about {
-      background-color: #fff9f4;
-      border-left: 6px solid #b56a4c;
-      padding: 1.5rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .gallery img {
+
+    iframe {
       width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .contact {
-      background-color: #e8d7c0;
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      margin-top: 3rem;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #6f5b4d;
-      padding: 1rem;
-    }
-    a {
-      color: #3e2d24;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      height: 600px;
+      border: none;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Batool Marzooq</h1>
-    <p>Visual Artist | Portfolio</p>
+    <button class="language-toggle" onclick="toggleLanguage()">العربية</button>
+    <h1 data-en="My Art Portfolio" data-ar="معرض لوحاتي">My Art Portfolio</h1>
   </header>
 
-  <section>
-    <div class="about">
-      <h2>About Me</h2>
-      <p>
-        I'm Batool Marzooq, a Bahraini visual artist and a graduate of the Bachelor of Fine Arts program at the University of Bahrain – College of Arts, Department of Media, Tourism, and Arts.
-        Throughout my academic journey, I immersed myself in various disciplines such as painting, sculpture, ceramics, and design, which have shaped my artistic path and enhanced my expressive and visual abilities.
-        I strive to build an impactful artistic career that resonates with the Bahraini community and reflects a spirit of creativity.
-      </p>
-    </div>
+  <nav>
+    <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+    <a href="#art" data-en="Art Work" data-ar="الأعمال الفنية">Art Work</a>
+    <a href="#cv" data-en="CV" data-ar="السيرة الذاتية">CV</a>
+    <a href="#about" data-en="About Me" data-ar="عنّي">About Me</a>
+    <a href="#contact" data-en="Contact" data-ar="اتصل بي">Contact</a>
+  </nav>
 
-    <div class="gallery">
-      <img src="6c7244197b935386653f662371e97d87c2b9cfac" alt="Artwork 1">
-      <img src="WhatsApp Image 2025-05-24 at 9.35.25 AM.jpeg" alt="Artwork 2">
-      <img src="https://github.com/batoolmarzooq/batool/blob/main/WhatsApp%20Image%202025-05-24%20at%209.35.25%20AM.jpeg" alt="Artwork 3">
-    </div>
-
-    <div class="contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:Batoolmarzooq15@gmail.com">Batoolmarzooq15@gmail.com</a></p>
-      <p>Instagram: <a href="https://www.instagram.com/Batool.almarzooq" target="_blank">@Batool.almarzooq</a></p>
-    </div>
+  <section id="home">
+    <h2 data-en="Welcome to my art world!" data-ar="مرحبًا بكم في عالمي الفني!">Welcome to my art world!</h2>
   </section>
 
-  <footer>
-    &copy; 2025 Batool Marzooq. All rights reserved.
-  </footer>
+  <section id="art">
+    <h2 data-en="Art Work" data-ar="الأعمال الفنية">Art Work</h2>
+    <iframe src="https://drive.google.com/embeddedfolderview?id=1qX0i2HX5xQ0rQKcMAgUgbcVNBD0Dsujm#grid" allowfullscreen></iframe>
+  </section>
+
+  <section id="cv">
+    <h2 data-en="CV" data-ar="السيرة الذاتية">CV</h2>
+    <iframe src="https://drive.google.com/file/d/1OU9IrrEyK2zH7hKp39p8WvOG0c3mZx5b/preview" allow="autoplay"></iframe>
+  </section>
+
+  <section id="about">
+    <h2 data-en="About Me" data-ar="عنّي">About Me</h2>
+    <iframe src="https://drive.google.com/file/d/1PCvI2ejU6C7SLbGJRGilmuLITRw5fsRt/preview" allow="autoplay"></iframe>
+  </section>
+
+  <section id="contact">
+    <h2 data-en="Contact" data-ar="اتصل بي">Contact</h2>
+    <iframe src="https://drive.google.com/file/d/1n8XHwTuxcN5xA5s44aCcrZSuOqehJrE2/preview" allow="autoplay"></iframe>
+  </section>
+
+  <script>
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.getAttribute(`data-${currentLang}`);
+      });
+      document.querySelector('.language-toggle').textContent = currentLang === 'en' ? 'العربية' : 'English';
+      document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+    }
+  </script>
 </body>
 </html>
